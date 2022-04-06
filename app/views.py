@@ -109,4 +109,4 @@ def news(request):
     context = {
         "posts": posts
     }
-    return render(request, "app/news.html", context)
+    return render(request, "blog/news.html", context)
