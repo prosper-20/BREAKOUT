@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Home(ListView):
     model = Post
@@ -13,7 +14,7 @@ class PostDetailView(DetailView):
     template_name = "blog/news_detail.html"
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
 
     fields = ["title", "content", "category", "image"]
