@@ -1,0 +1,11 @@
+{% extends "users/base.html" %}
+{% block content %}
+<div class="alert alert-info">
+    <p>You have been logged out</p>
+</div>
+<div class="borer-top pt-3">
+    <small class="text-muted">
+        <a class="btn btn-outline-info" href="{% url 'home' %}">Home</a>
+    </small>
+</div>
+{% endblock content %}
