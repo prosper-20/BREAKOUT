@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div class="logo mt-15">
-                                        <a href="index.html"><img src="images/logo/logo.png" alt=""></a>
+                                        <a href="index.html"><img src="{% static 'app/images/logo/}logo.png' %}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-sm-10 hidden-xs">
@@ -88,7 +88,7 @@
                                                 <ul>
                                                     <li><a href="{% url 'home' %}">home</a></li>
                                                     <li><a href="{% url 'about' %}">About</a></li>
-                                                    <li><a href="{% url 'galley' %}">Gallery</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                                     <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
                                                         <ul class="dropdown_menu">
                                                             <li><a href="404.html">404</a></li>
@@ -209,18 +209,19 @@
                         <div class="carousel_list our-news-list">
                             <div class="single-page-staff">
                                 <div class="col-md-4 col-sm-6 col-xs-12 col-sm-6 col-xs-12">
+                                    {% for staff in stafs %}
                                     <div class="single-staff">
                                         <div class="sraff-inner">
-                                            <img src="images/staff/staff1.jpg" alt="">
+                                            <img src="{{ staff.image.url }}" alt="">
                                             <div class="staff-title">
                                                 <span class="plus"></span>
-                                                <h2>Soleman</h2>
-                                                <h5>hotel staff</h5>
+                                                <h2>{{ staff.name }}</h2>
+                                                <h5>{{ staff.job }}</h5>
 
                                             </div>
                                             <div class="staff-hover-desc">
-                                                <h2>Soleman</h2>
-                                                <h5>hotel staff</h5>
+                                                <h2>{{ staff.name }}</h2>
+                                                <h5>{{ staff.job }}</h5>
                                                 <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr.</p>
                                                 <div class="scoial_icons">
                                                     <a href="#"><i class="mdi mdi-facebook"></i></a>
@@ -231,6 +232,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {% endfor %}
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-staff">
@@ -687,7 +689,7 @@
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="single-footer mt-0">
                             <div class="logo">
-                                <img src="{% staff 'app/images/logo/new_logo.png' %}" alt="">
+                                <img src="{% static 'app/images/logo/new_logo.png' %}" alt="">
                             </div>
                             <div class="f-adress">
                                 <p><span>Address:</span> ur address goes here,street Crossroad123.</p>

@@ -70,7 +70,7 @@ def news(request):
     return render(request, "blog/news.html", context)
 
 def staff(request):
-    staffs = Staff.objectss.all()
+    staffs = Staff.objects.all()
     context = {
         'staffs': staffs
     }
