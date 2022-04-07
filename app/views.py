@@ -75,3 +75,10 @@ def staff(request):
         'staffs': staffs
     }
     return render(request, 'app/staff.html', context)
+
+def room(request):
+    rooms = Room.objects.all()
+    context = {
+        'rooms': rooms
+    }
+    return render(request, "app/our_room.html", context)
