@@ -5,11 +5,11 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, FormView, View, DeleteView
 from .forms import AvailabilityForm 
 from .models import Room, Booking
-from hotel.booking_functions.availability import check_availability
-from hotel.booking_functions.get_room_cat_url_list import get_room_cat_url_list
-from hotel.booking_functions.get_room_category_human_format import get_room_category_human_format
-from hotel.booking_functions.get_available_rooms import get_available_rooms
-from hotel.booking_functions.book_room import book_room
+from hotelapp.booking_functions.availability import check_availability
+from hotelapp.booking_functions.get_room_cat_url_list import get_room_cat_url_list
+from hotelapp.booking_functions.get_room_category_human_format import get_room_category_human_format
+from hotelapp.booking_functions.get_available_rooms import get_available_rooms
+from hotelapp.booking_functions.book_room import book_room
 # Create your views here.
 
 def RoomListView(requsest):
