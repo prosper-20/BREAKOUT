@@ -4,7 +4,7 @@ from typing import List
 from unicodedata import category
 from urllib import request
 from django.shortcuts import render, get_object_or_404, HttpResponse
-from .models import Room, RoomImage, Staff, Booking, HotelImage
+from .models import Room, RoomImage, Staff, HotelImage
 from django.views.generic import ListView, DetailView, FormView, View
 from blog.models import Post
 from .forms import AvailabilityForm
@@ -17,8 +17,6 @@ class HomeView(ListView):
     template_name = 'app/home.html'
     context_object_name = "rooms"
     extra_context={'staffs': Staff.objects.all(), 'posts': Post.objects.all()}
-
-            
 
 
 class RoomDetailView(DetailView):

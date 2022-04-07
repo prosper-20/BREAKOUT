@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import Category, Room, Booking, RoomImage, Staff, HotelImage
+from .models import Category, Room, RoomImage, Staff, HotelImage
 
 admin.site.register(Category)
 admin.site.register(Staff)
-admin.site.register(Booking)
 admin.site.register(HotelImage)
 
 class RoomImageAdmin(admin.StackedInline):
