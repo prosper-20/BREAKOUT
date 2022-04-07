@@ -8,7 +8,7 @@ from .models import Room, RoomImage, Staff, Booking, HotelImage
 from django.views.generic import ListView, DetailView, FormView, View
 from blog.models import Post
 from .forms import AvailabilityForm
-from app.booking_functions.availability import check_availability
+
 
 
 
@@ -18,47 +18,7 @@ class HomeView(ListView):
     context_object_name = "rooms"
     extra_context={'staffs': Staff.objects.all(), 'posts': Post.objects.all()}
 
-class BookingList(ListView):
-    model = Booking
-
-# def tester(request, slug):
-#     room = get_object_or_404(Room, slug=slug)
-#     form = AvailabilityForm()
-#     context = {
-#         "room": room,
-#         "form": form
-#     }
-#     return render(request, 'app/room_booking.html', context)
-
-
-
-class BookingView(FormView):
-    form_class = AvailabilityForm
-    template_name = 'app/availability_form.html'
-    extra_context = {"form": AvailabilityForm}
-
-    def form_valid(self, form):
-        data = form.cleaned_data
-        room_list = Room.objects.filter(category=data['room_category'])
-        available_rooms = []
-        for room in room_list:
-            if check_availability(room, data['check_in'], data['check_out']):
-                available_rooms.append(room)
-
-        if len(available_rooms) > 0:
-            room = available_rooms[0]
-            booking = Booking.objects.create(
-                user=self.request.user,
-                room=room,
-                check_in=data['check_in'],
-                check_out=data['check_out']
-            )
-            booking.save()
-            return HttpResponse(booking)
-        else:
-            return HttpResponse('All of this category of rooms are booked!! Try another one')
             
-
 
 
 class RoomDetailView(DetailView):
