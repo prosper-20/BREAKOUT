@@ -28,7 +28,7 @@
     <link href="#" data-style="styles" rel="stylesheet">    
     
     <!-- User style -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
 
     <!-- Modernizr JS -->
@@ -69,10 +69,10 @@
                                     <div class="header-top ptb-10">
                                         <div class="adresses">
                                             <div class="phone">
-                                                <p>call <span>+012 345 678 102 </span></p>
+                                                <p>call <span>+234 9036356792 </span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>info@example.com</span></p>
+                                                <p>Email: <span>edwardprosper001@gmail.com</span></p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -221,7 +221,7 @@
                                             </div>
                                         </div>
                                         <div class="news-desc">
-                                            <h3 class="news-title"><a href="#">{{ post.title }}
+                                            <h3 class="news-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}
             the Night life.</a> </h3>
                                             <p class="news_desc">{{ post.content|truncatechars:50}}</p>
                                             <div class="news-action">
