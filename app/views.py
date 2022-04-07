@@ -76,7 +76,7 @@ def staff(request):
     }
     return render(request, 'app/staff.html', context)
 
-def room(request):
+def rooms(request):
     rooms = Room.objects.all()
     context = {
         'rooms': rooms

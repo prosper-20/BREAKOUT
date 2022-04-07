@@ -13,7 +13,7 @@ urlpatterns = [
     # path("booker/<slug:slug>/", views.tester, name="tester"),
     path("gallery/", views.gallery, name="gallery"),
     path('staff/', views.staff, name="staff"),
-    path('rooms/', views.room, name="rooms")
+    path('rooms/', views.rooms, name="rooms")
 
 ]
  
