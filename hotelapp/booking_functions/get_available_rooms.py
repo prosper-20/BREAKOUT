@@ -1,4 +1,5 @@
-from hotelapp.models import Room
+# from hotelapp.models import Room
+from app.models import Room
 from hotelapp.booking_functions.availability import check_availability
 
 def get_available_rooms(category, check_in, check_out):

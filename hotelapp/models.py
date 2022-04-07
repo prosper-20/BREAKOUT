@@ -1,24 +1,24 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse_lazy
-
+from app.models import Room
 # Create your models here.
 
-class Room(models.Model):
-    ROOM_CATEGORIES=(
-        ('EXE', 'EXECUTIVE'),
-        ('DEL', 'DELUXE'),
-        ('PRE', 'PREMIUM'),
-        ('STD', 'STANDARD'),
-        ('PNT', 'PENTHOUSE')
-    )
-    number = models.IntegerField()
-    category = models.CharField(max_length=3, choices=ROOM_CATEGORIES)
-    beds = models.IntegerField()
-    capacity = models.IntegerField()
+# class Room(models.Model):
+#     ROOM_CATEGORIES=(
+#         ('EXE', 'EXECUTIVE'),
+#         ('DEL', 'DELUXE'),
+#         ('PRE', 'PREMIUM'),
+#         ('STD', 'STANDARD'),
+#         ('PNT', 'PENTHOUSE')
+#     )
+#     number = models.IntegerField()
+#     category = models.CharField(max_length=3, choices=ROOM_CATEGORIES)
+#     beds = models.IntegerField()
+#     capacity = models.IntegerField()
 
-    def __str__(self):
-        return f"{self.number} - {self.category}"
+#     def __str__(self):
+#         return f"{self.number} - {self.category}"
 
 
 class Booking(models.Model):
