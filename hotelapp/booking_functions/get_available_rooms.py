@@ -1,5 +1,5 @@
-from hotel.models import Room
-from hotel.booking_functions.availability import check_availability
+from hotelapp.models import Room
+from hotelapp.booking_functions.availability import check_availability
 
 def get_available_rooms(category, check_in, check_out):
     room_list = Room.objects.filter(category=category)
