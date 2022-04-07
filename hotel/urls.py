@@ -23,7 +23,7 @@ from blog.views import Home
 from users import views as user_views
 from django.contrib.auth import views as auth_views
 
-from h.views import RoomListView, BookingListView, RoomDetailView, CancelBookingView
+from hotelapp.views import RoomListView, BookingListView, RoomDetailView, CancelBookingView
 
 
 urlpatterns = [
