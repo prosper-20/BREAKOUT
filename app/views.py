@@ -68,3 +68,10 @@ def news(request):
         "posts": posts
     }
     return render(request, "blog/news.html", context)
+
+def staff(request):
+    staffs = Staff.objectss.all()
+    context = {
+        'staffs': staffs
+    }
+    return render(request, 'app/staff.html', context)

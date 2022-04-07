@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -67,10 +68,10 @@
                                     <div class="header-top ptb-10">
                                         <div class="adresses">
                                             <div class="phone">
-                                                <p>call <span>+012 345 678 102 </span></p>
+                                                <p>call <span>+234 9036356792</span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>info@example.com</span></p>
+                                                <p>Email: <span>edwardprosper001@gmail.com</span></p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -85,9 +86,9 @@
                                         <div class="menu-list hidden-sm hidden-xs">
                                             <nav>
                                                 <ul>
-                                                    <li><a href="index.html">home</a></li>
-                                                    <li><a href="about-us.html">About</a></li>
-                                                    <li><a href="gallery.html">Gallery</a></li>
+                                                    <li><a href="{% url 'home' %}">home</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'galley' %}">Gallery</a></li>
                                                     <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
                                                         <ul class="dropdown_menu">
                                                             <li><a href="404.html">404</a></li>
@@ -686,7 +687,7 @@
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="single-footer mt-0">
                             <div class="logo">
-                                <img src="images/logo/logo.png" alt="">
+                                <img src="{% staff 'app/images/logo/new_logo.png' %}" alt="">
                             </div>
                             <div class="f-adress">
                                 <p><span>Address:</span> ur address goes here,street Crossroad123.</p>
