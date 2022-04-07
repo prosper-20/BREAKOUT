@@ -1,5 +1,6 @@
 from django.shortcuts import HttpResponse
-from hotelapp.models import Room
+# from hotelapp.models import Room
+from app.models import Room
 
 
 

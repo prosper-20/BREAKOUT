@@ -1,5 +1,6 @@
 from django.urls import reverse
-from hotelapp.models import Room
+# from hotelapp.models import Room
+from app.models import Room
 
 
 def get_room_cat_url_list():
