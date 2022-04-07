@@ -226,7 +226,7 @@
                                             <p class="news_desc">{{ post.content|truncatechars:50}}</p>
                                             <div class="news-action">
                                                 <div class="read-more">
-                                                    <a href="#">Read more</a>
+                                                    <a href="{% url 'post-detail' post.id %}">Read more</a>
                                                 </div>
                                                 <div class="news-share">
                                                     <p>Share:</p>
@@ -537,14 +537,14 @@
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="single-footer mt-0">
                             <div class="logo">
-                                <img src="images/logo/logo.png" alt="">
+                                <img src="{% static 'app/images/logo/new_logo.png' %}" alt="">
                             </div>
                             <div class="f-adress">
-                                <p><span>Address:</span> ur address goes here,street Crossroad123.</p>
+                                <p><span>Address:</span>10 Obe Street, Off Ajao Road</p>
                             </div>
                             <div class="hotel-contact">
-                                <p><span>phone:</span> 99 55 88586 5478.</p>
-                                <p><span>Email:</span>info@example.com</p>
+                                <p><span>phone:</span> +234 9036356792</p>
+                                <p><span>Email:</span>edwardprosper001@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -583,24 +583,26 @@
                             <h3>instagram</h3>
                             <div class="instagram-post">
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-1.jpg" alt=""></a>
+                                    <a href="#"><img src="https://cf.bstatic.com/xdata/images/hotel/max500/321442000.jpg?k=b57b8bd14783a10193b59a02bdbf9c02e520767c2a4cc55a41a4e3944b7cf510&o=&hp=1 alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-2.jpg" alt=""></a>
+                                    <a href="#"><img src="https://media-cdn.tripadvisor.com/media/photo-s/02/2b/a6/95/la-terrasse-piscine.jpg" alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-3.jpg" alt=""></a>
+                                    <a href="#"><img src="https://content.r9cdn.net/himg/4a/94/77/ice-191475482-70734483_3XL-803370.jpg" alt=""></a>
+                                </div>
+                                <!-- <div class="single-post">
+                                    <a href="#"><img src="https://media.radissonhotels.net/image/radisson-blu-hotel-spa-nashik/guestroom/16256-126780-f72591213_3xl.jpg" alt=""></a>
+                                </div> -->
+                                <!-- <div class="single-post">
+                                    <a href="#"><img src="https://content.r9cdn.net/himg/4a/94/77/ice-191475482-70734483_3XL-803370.jpg" alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-4.jpg" alt=""></a>
+                                    <a href="#"><img src="https://content.r9cdn.net/himg/4a/94/77/ice-191475482-70734483_3XL-803370.jpg" alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-5.jpg" alt=""></a>
-                                </div>
-                                <div class="single-post">
-                                    <a href="#"><img src="images/instagram/img-6.jpg" alt=""></a>
-                                </div>
-                            </div>
+                                    <a href="#"><img src="https://content.r9cdn.net/himg/4a/94/77/ice-191475482-70734483_3XL-803370.jpg" alt=""></a>
+                                </div> -->
                         </div>
                     </div>
                 </div>
@@ -610,7 +612,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-8 col-xs-12">
-                        <p>Copyright© CHONDO 2018.All right reserved.Created by <a href="https://freethemescloud.com/"> Free themes Cloud</a></p>
+                        <p>Copyright© P's Suites 2022.All right reserved</p>
                     </div>
                     <div class="col-md-6 col-sm-4 col-xs-12">
                         <div class="footer-menu">

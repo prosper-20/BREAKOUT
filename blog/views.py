@@ -2,10 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-import logging
 
-
-logger = logging.getLogger(__name__)
 
 class Home(ListView):
     model = Post
