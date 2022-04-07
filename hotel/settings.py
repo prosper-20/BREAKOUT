@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'app.apps.AppConfig',
     'crispy_forms',
+    'hotelapp.apps.HotelappConfig',
 ]
 
 MIDDLEWARE = [
