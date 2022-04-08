@@ -47,6 +47,13 @@ class HomepageTests(TestCase): # new
         self.assertNotContains(
         self.response, 'Hi there! I should not be on the page.')
 
+    def test_staff_status_code(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_staffpage_template(self):
+        self.assertTemplateUsed(self.response, 'app/staff.html')
+
+
 
 
 
