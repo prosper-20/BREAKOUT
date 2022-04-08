@@ -70,10 +70,10 @@
                                     <div class="header-top ptb-10">
                                         <div class="adresses">
                                             <div class="phone">
-                                                <p>call <span>+012 345 678 102 </span></p>
+                                                <p>call <span>+234 9036356792</span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>info@example.com</span></p>
+                                                <p>Email: <span>P's.suites@gmail.com</span></p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -228,6 +228,7 @@
                                     </div>
                                 </div> -->
                                 {% for room_category, room_url in room_list %}
+                                {% for room in rooms %}
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-room mb-80">
                                         <div class="room-img">
@@ -235,7 +236,7 @@
                                         </div>
                                         <div class="room-desc">
                                             <div class="room-name">
-                                                <h3><a href="#">{{ room.category }}</a></h3>
+                                                <h3><a href="{{ room_url }}">{{ room.category }}</a></h3>
                                             </div>
                                             <div class="room-rent">
                                                 <h5>€ {{ room.price }} / <span>Night</span></h5>
@@ -246,6 +247,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                                 {% endfor %}
                             </div>
                         </div>
