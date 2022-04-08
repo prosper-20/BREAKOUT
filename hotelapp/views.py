@@ -12,12 +12,15 @@ from hotelapp.booking_functions.get_available_rooms import get_available_rooms
 from hotelapp.booking_functions.book_room import book_room
 # Create your views here.
 
-def RoomListView(requsest):
+def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
+    rooms = Room.objects.all()
     context = {
         "room_list": room_category_url_list,
+        "rooms": rooms
     }
-    return render(requsest, 'hotel/room_list_view.html', context)
+    return render(request, 'app/our_room.html', context)
+    #return render(requsest, 'hotel/room_list_view.html', context)
 
 
 class BookingListView(ListView):

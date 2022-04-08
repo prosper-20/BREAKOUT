@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Chondo Hotel | Our room</title>
+    <title>P's Suites | Our room</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -227,11 +227,11 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                {% for room in rooms %}
+                                {% for room_category, room_url in room_list %}
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-room mb-80">
                                         <div class="room-img">
-                                            <a href="#"><img src="{{ room.image.url }}" alt=""></a>
+                                            <a href="{{ room_url }}"><img src="{{ room.image.url }}" alt=""></a>
                                         </div>
                                         <div class="room-desc">
                                             <div class="room-name">

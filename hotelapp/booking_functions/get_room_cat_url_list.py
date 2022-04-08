@@ -10,6 +10,7 @@ def get_room_cat_url_list():
     '''
     room = Room.objects.all()[0]
     room_categories = dict(room.ROOM_CATEGORIES)
+   
 
     room_cat_url__list = []
     
