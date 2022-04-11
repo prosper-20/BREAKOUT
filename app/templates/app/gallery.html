@@ -73,10 +73,10 @@
                                     <div class="header-top ptb-10">
                                         <div class="adresses">
                                             <div class="phone">
-                                                <p>call <span>+012 345 678 102 </span></p>
+                                                <p>call <span>+234 9036 356792 </span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>info@example.com</span></p>
+                                                <p>Email: P's.suite@gmail.com</p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -91,24 +91,24 @@
                                         <div class="menu-list hidden-sm hidden-xs">
                                             <nav>
                                                 <ul>
-                                                    <li><a href="index.html">home</a></li>
-                                                    <li><a href="about-us.html">About</a></li>
-                                                    <li><a href="gallery.html">Gallery</a></li>
-                                                    <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
-                                                        <ul class="dropdown_menu">
+                                                    <li><a href="{% url 'home' %}">home</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    <li><a href="#">pages</a>
+                                                        <ul>
                                                             <li><a href="404.html">404</a></li>
-															<li><a href="booking-information.html">Booking Information</a></li>
-															<li><a href="personal-information.html">Personal Information</a></li>
-															<li><a href="payment-information.html">Parment Information</a></li>
-															<li><a href="booking-done.html">Booking Done</a></li>
-															<li><a href="room-booking.html">Room booking</a></li>
-															<li><a href="news.html">News</a></li>
-															<li><a href="gallery.html">Gallery</a></li>
-															 <li><a href="staff.html">Staff</a></li>
-															<li><a href="our-room.html">Room</a></li>
+                                                            <li><a href="booking-information.html">Booking Information</a></li>
+                                                            <li><a href="personal-information.html">Personal Information</a></li>
+                                                            <li><a href="payment-information.html">Parment Information</a></li>
+                                                            <li><a href="booking-done.html">Booking Done</a></li>
+                                                            <li><a href="room-booking.html">Room booking</a></li>
+                                                            <li><a href="{% url 'news' %}">News</a></li>
+                                                            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                            <li><a href="{% url 'staff' %}">Staff</a></li>
+                                                            <li><a href="{% url 'rooms' %}">Room</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="contact-us.html">Contact</a></li>
+                                                    <li><a href="{% url 'contact' %}">contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -204,7 +204,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title mb-80">
-                            <h2>All hotel <span>image</span></h2>
+                            <h2>All hotel <span>images</span></h2>
                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p>
                         </div>
                     </div>
