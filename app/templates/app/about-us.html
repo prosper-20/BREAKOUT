@@ -88,9 +88,9 @@
                                         <div class="menu-list hidden-sm hidden-xs">
                                             <nav>
                                                 <ul>
-                                                    <li><a href="index.html">home</a></li>
-                                                    <li><a href="about-us.html">About</a></li>
-                                                    <li><a href="gallery.html">Gallery</a></li>
+                                                    <li><a href="{% url 'home' %}">home</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                                     <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
                                                         <ul class="dropdown_menu">
                                                             <li><a href="404.html">404</a></li>
@@ -99,13 +99,13 @@
 															<li><a href="payment-information.html">Parment Information</a></li>
 															<li><a href="booking-done.html">Booking Done</a></li>
 															<li><a href="room-booking.html">Room booking</a></li>
-															<li><a href="news.html">News</a></li>
-															<li><a href="gallery.html">Gallery</a></li>
-															 <li><a href="staff.html">Staff</a></li>
-															<li><a href="our-room.html">Room</a></li>
+															<li><a href="{% url 'news' %}">News</a></li>
+															<li><a href="{% url 'gallery' %}">Gallery</a></li>
+															 <li><a href="{% url 'staff' %}">Staff</a></li>
+															<li><a href="{% url 'rooms' %}">Room</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="contact-us.html">Contact</a></li>
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -124,24 +124,24 @@
                         <div class="col-md-12">
                             <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="#">pages</a>
-                                    <ul>
+                                <li><a href="{% url 'home' %}">home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown_menu">
                                         <li><a href="404.html">404</a></li>
                                         <li><a href="booking-information.html">Booking Information</a></li>
                                         <li><a href="personal-information.html">Personal Information</a></li>
                                         <li><a href="payment-information.html">Parment Information</a></li>
                                         <li><a href="booking-done.html">Booking Done</a></li>
                                         <li><a href="room-booking.html">Room booking</a></li>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="staff.html">Staff</a></li>
-                                        <li><a href="our-room.html">Room</a></li>
+                                        <li><a href="{% url 'news' %}">News</a></li>
+                                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                            <li><a href="{% url 'staff' %}">Staff</a></li>
+                                        <li><a href="{% url 'rooms' %}">Room</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html">contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </nav>
                         </div>
@@ -159,7 +159,7 @@
                                     <h2>About us</h2>
                                     <div class="breadcrubs-menu">
                                         <ul>
-                                            <li><a href="#">Home<i class="mdi mdi-chevron-right"></i></a></li>
+                                            <li><a href="{% url 'home' %}">Home<i class="mdi mdi-chevron-right"></i></a></li>
                                             <li>About us</li>
                                         </ul>
                                     </div>
@@ -284,7 +284,7 @@
                                 <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="feature1">
                                 <div class="feature-tab-inner">
-                                    <img src="{% static 'app/images/services/services6.jpg' %}" alt="">
+                                    <img src="https://media.istockphoto.com/photos/were-always-hungry-for-success-picture-id1330547182?b=1&k=20&m=1330547182&s=170667a&w=0&h=r363z4sXEp6Yg6E2YD_JUZQhtTgq-38-9oxfm5tQGug=" alt="">
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="feature2">
