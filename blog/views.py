@@ -4,6 +4,7 @@ from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
+
 class Home(ListView):
     model = Post
     context_object_name = 'posts'
