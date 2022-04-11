@@ -15,6 +15,8 @@ class Home(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = "blog/news_detail.html"
+    comments = Comment.objects.all()
+    extra_context = {"comments": comments}
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -66,5 +68,5 @@ class PostCommentView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('post_detail', kwargs={'pk': self.kwargs['pk']})
+        return reverse_lazy('post-detail', kwargs={'pk': self.kwargs['pk']})
 
