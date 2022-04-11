@@ -144,6 +144,19 @@
                                 </ul>
 
                             </div>
+                            <h3>Comments</h3>
+                            {% if not post.comments.all %}
+                                <p>No comment yet... <a href="{% url 'post_comment' post.pk %}">Add one?</a></p>
+                            {% else %}
+                            {% for comment in post.comments.all %}
+                                {{ comment.name }} - {{ comment.date_added }}
+                                <br>
+                                <strong>{{ comment.comment }}</strong>
+                                <br><br>
+                            {% endfor %}
+                            {% endif %}
+                            <br>
+                            <br>
                             <form action="#" method="get">
                                 <div class="name">
                                     <input type="text" name="" id="" placeholder="Name" class="name">
