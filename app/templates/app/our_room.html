@@ -228,16 +228,15 @@
                                     </div>
                                 </div> -->
                                 {% for room_category, room_url in room_list %}
-                                {% for room in rooms %}
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-room mb-80">
                                         <div class="room-img">
-                                            <a href="{{ room_url }}"><img src="{{ room.image.url }}" alt=""></a>
+                                            <a href="{{ room_url }}"><img src="https://media.radissonhotels.net/image/radisson-blu-anchorage-hotel-lagos-vi/guestroom/16256-116549-f72356985_3xl.jpg?impolicy=Card" alt=""></a>
                                         </div>
                                         <div class="room-desc">
                                             <div class="room-name">
                                                 <h3><a href="{{ room_url }}
-                                                    ">{{ room.category }}</a></h3>
+                                                    ">{{ room_category }}</a></h3>
                                             </div>
                                             <div class="room-rent">
                                                 <h5>€ {{ room.price }} / <span>Night</span></h5>
@@ -248,7 +247,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                {% endfor %}
                                 {% endfor %}
                             </div>
                         </div>

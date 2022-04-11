@@ -42,10 +42,13 @@ class RoomDetailView(View):
         # Get the human raedable formst
         human_format_room_category = get_room_category_human_format(category)
         form = AvailabilityForm() # Initialisze empty form
+        # You just added this
+        room = Room.objects.all()
         if human_format_room_category is not None: # check for invalid category names
             context = {
                 'room_category': human_format_room_category,
                 "form": form,
+                "room": room #new
             }
             return render(request, 'hotel/room_detail_view.html', context)
         else:
