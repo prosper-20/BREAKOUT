@@ -162,6 +162,10 @@
                             {% endif %}
                             <br>
                             <br>
+                            <form action="{% url 'like_post' post.pk %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit", name="post_id", value="{{ post.id}}", class="btn btn-primary btn-sm">Like</button>- {{ total_likes }} Likes
+                            </form>
                             <!-- <form action="#" method="get">
                                 <div class="name">
                                     <input type="text" name="" id="" placeholder="Name" class="name">

@@ -25,6 +25,13 @@ class PostDetailView(DetailView):
     comments = Comment.objects.all()
     extra_context = {"comments": comments}
 
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data()
+        stuff = get_object_or_404(Post, id=self.kwargs["pk"])
+        total_likes = stuff.total_likes()
+        context["total_likes"] = total_likes
+        return context
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
