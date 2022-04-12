@@ -5,6 +5,7 @@ from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import CommentForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 class Home(ListView):
@@ -13,6 +14,7 @@ class Home(ListView):
     template_name = "blog/news.html"
 
 
+@login_required
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
