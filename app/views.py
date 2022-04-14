@@ -8,6 +8,7 @@ from .models import Room, RoomImage, Staff, HotelImage
 from django.views.generic import ListView, DetailView, FormView, View
 from blog.models import Post
 from .forms import AvailabilityForm
+from hotelapp.booking_functions import get_room_category_human_format
 
 
 
@@ -82,3 +83,27 @@ def rooms(request):
         'rooms': rooms
     }
     return render(request, "app/our_room.html", context)
+
+
+
+# You created this to test the booking
+
+
+class TestView(View):
+    def get(self, request, *args, **kwargs):
+        category = self.kwargs.get('category', None)
+
+        # Get the human raedable formst
+        human_format_room_category = get_room_category_human_format(category)
+        form = AvailabilityForm() # Initialisze empty form
+        # You just added this
+        room = Room.objects.all()
+        if human_format_room_category is not None: # check for invalid category names
+            context = {
+                'room_category': human_format_room_category,
+                "form": form,
+                "room": room #new
+            }
+            return render(request, 'app/room_booking.html', context)
+        else:
+            return HttpResponse('Category does not exist')
