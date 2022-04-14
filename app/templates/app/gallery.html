@@ -104,7 +104,7 @@
 															<li><a href="room-booking.html">Room booking</a></li>
 															<li><a href="{% url 'news' %}">News</a></li>
 															<li><a href="{% url 'gallery' %}">Gallery</a></li>
-															 <li><a href="{% url 'satff' %}">Staff</a></li>
+															 <li><a href="{% url 'staff' %}">Staff</a></li>
 															<li><a href="{% url 'rooms' %}">Room</a></li>
                                                         </ul>
                                                     </li>
@@ -162,7 +162,7 @@
                                     <h2>Gallery</h2>
                                     <div class="breadcrubs-menu">
                                         <ul>
-                                            <li><a href="#">Home<i class="mdi mdi-chevron-right"></i></a></li>
+                                            <li><a href="{% url 'home' %}">Home<i class="mdi mdi-chevron-right"></i></a></li>
                                             <li>Gallery</li>
                                         </ul>
                                     </div>
@@ -205,7 +205,7 @@
                     <div class="col-md-12">
                         <div class="section-title mb-80">
                             <h2>All hotel <span>images</span></h2>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p>
+                           <p>Experience the difference</p>
                         </div>
                     </div>
                 </div>
@@ -299,14 +299,15 @@
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="single-footer mt-0">
                             <div class="logo">
-                                <img src="images/logo/logo.png" alt="">
+                                <img src="{% static 'app/images/logo/new_logo.png' %}" alt="">
                             </div>
                             <div class="f-adress">
-                                <p><span>Address:</span> ur address goes here,street Crossroad123.</p>
+                                <p><span>Address:</span> 10 Obe Street,
+    Off Ajao Road, Ikeja.</p>
                             </div>
                             <div class="hotel-contact">
-                                <p><sapn>phone:</sapn> 99 55 88586 5478.</p>
-                                <p><span>Email:</span>info@example.com</p>
+                                <p><span>Phone:</span> +234 903 6356 792</p>
+                                <p><span>Email:</span> P's.suites@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -345,22 +346,13 @@
                             <h3>instagram</h3>
                             <div class="instagram-post">
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-1.jpg" alt=""></a>
+                                    <a href="#"><img src="https://cf.bstatic.com/xdata/images/hotel/max500/321442000.jpg?k=b57b8bd14783a10193b59a02bdbf9c02e520767c2a4cc55a41a4e3944b7cf510&o=&hp=1 alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-2.jpg" alt=""></a>
+                                    <a href="#"><img src="https://media-cdn.tripadvisor.com/media/photo-s/02/2b/a6/95/la-terrasse-piscine.jpg" alt=""></a>
                                 </div>
                                 <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-3.jpg" alt=""></a>
-                                </div>
-                                <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-4.jpg" alt=""></a>
-                                </div>
-                                <div class="single-post">
-                                    <a href="#"><img src="images/instagram/ins-5.jpg" alt=""></a>
-                                </div>
-                                <div class="single-post">
-                                    <a href="#"><img src="images/instagram/img-6.jpg" alt=""></a>
+                                    <a href="#"><img src="https://content.r9cdn.net/himg/4a/94/77/ice-191475482-70734483_3XL-803370.jpg" alt=""></a>
                                 </div>
                             </div>
                         </div>
