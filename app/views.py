@@ -98,6 +98,7 @@ class TestView(View):
         form = AvailabilityForm() # Initialisze empty form
         # You just added this
         room = Room.objects.filter(category=category).first()
+        room_cap = Room.objects.filter(capacity=1)
         if human_format_room_category is not None: # check for invalid category names
             context = {
                 'room_category': human_format_room_category,

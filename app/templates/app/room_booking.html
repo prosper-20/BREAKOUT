@@ -273,12 +273,11 @@
                                 </div>
                                 <div class="room-rent fix mb-45">
                                     <div class="room-rent-img">
-                                        <img src="images/room/small-room.jpg" alt="">
+                                        <img src="{{ room.image.url }}" alt="">
                                     </div>
                                     <div class="room-rent-desc">
-                                        <h3 class="roome-rent-title">{{room.capacity}} people</h3>
-                                        <div class="room-sub-desc">
-                                            <h4>Total Price</h4>
+                                            <h3 class="roome-rent-title">{{room.capacity}} person(s)</h3>
+                                            <!-- <h4>Price</h4> -->
                                             <h3>{{ room.price}}<span>/per night</span></h3>
                                         </div>
                                     </div>
