@@ -97,7 +97,7 @@ class TestView(View):
         human_format_room_category = get_room_category_human_format(category)
         form = AvailabilityForm() # Initialisze empty form
         # You just added this
-        room = Room.objects.filter(category="category").first()
+        room = Room.objects.filter(category=category).first()
         if human_format_room_category is not None: # check for invalid category names
             context = {
                 'room_category': human_format_room_category,
