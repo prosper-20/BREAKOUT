@@ -14,7 +14,8 @@ from hotelapp.booking_functions.book_room import book_room
 
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
-    rooms = Room.objects.all()
+    # rooms = Room.objects.all()
+    room = Room.objects.filter(category=room_category).first()
     context = {
         "room_list": room_category_url_list,
         "rooms": rooms
@@ -43,7 +44,8 @@ class RoomDetailView(View):
         human_format_room_category = get_room_category_human_format(category)
         form = AvailabilityForm() # Initialisze empty form
         # You just added this
-        room = Room.objects.all()
+        room = Room.objects.filter(category=category).first()
+        room_cap = Room.objects.filter(capacity=1)
         if human_format_room_category is not None: # check for invalid category names
             context = {
                 'room_category': human_format_room_category,
