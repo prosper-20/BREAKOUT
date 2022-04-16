@@ -228,7 +228,7 @@
                                     </div>
                                 </div> -->
                                 {% for room_category, room_url in room_list %}
-
+                                {% for room in rooms %}
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-room mb-80">
                                         <div class="room-img">
@@ -248,7 +248,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+                                {% endfor %}
                                 {% endfor %}
                             </div>
                         </div>
