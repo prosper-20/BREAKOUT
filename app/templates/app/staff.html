@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div class="logo mt-15">
-                                        <a href="index.html"><img src="{% static 'app/images/logo/}logo.png' %}" alt=""></a>
+                                        <a href="{% url 'home' %}"><img src="{% static 'app/images/logo/}logo.png' %}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-sm-10 hidden-xs">
@@ -71,7 +71,7 @@
                                                 <p>call <span>+234 9036356792</span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>edwardprosper001@gmail.com</span></p>
+                                                <p>Email: <span>P's.suite@gmail.com</span></p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -97,13 +97,13 @@
 															<li><a href="payment-information.html">Parment Information</a></li>
 															<li><a href="booking-done.html">Booking Done</a></li>
 															<li><a href="room-booking.html">Room booking</a></li>
-															<li><a href="news.html">News</a></li>
-															<li><a href="gallery.html">Gallery</a></li>
-															 <li><a href="staff.html">Staff</a></li>
-															<li><a href="our-room.html">Room</a></li>
+															<li><a href="{% url 'news' %}">News</a></li>
+															<li><a href="{% url 'gallery' %}">Gallery</a></li>
+															<li><a href="{% url 'staff' %}">Staff</a></li>
+															<li><a href="{% url 'rooms' %}">Room</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="contact-us.html">Contact</a></li>
+                                                    <li><a href="{% url 'contatc' %}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -122,9 +122,9 @@
                         <div class="col-md-12">
                             <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="{% url 'home' %}">home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                 <li><a href="#">pages</a>
                                     <ul>
                                         <li><a href="404.html">404</a></li>
@@ -133,13 +133,13 @@
                                         <li><a href="payment-information.html">Parment Information</a></li>
                                         <li><a href="booking-done.html">Booking Done</a></li>
                                         <li><a href="room-booking.html">Room booking</a></li>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="staff.html">Staff</a></li>
-                                        <li><a href="our-room.html">Room</a></li>
+                                        <li><a href="{% url 'news' %}">News</a></li>
+                                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                        <li><a href="{% url 'staff' %}">Staff</a></li>
+                                        <li><a href="{% url 'rooms' %}">Room</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html">contact</a></li>
+                                <li><a href="{% url 'contact' %}">contact</a></li>
                             </ul>
                         </nav>
                         </div>
@@ -157,7 +157,7 @@
                                     <h2>Staff</h2>
                                     <div class="breadcrubs-menu">
                                         <ul>
-                                            <li><a href="#">Home<i class="mdi mdi-chevron-right"></i></a></li>
+                                            <li><a href="{% url 'home' %}">Home<i class="mdi mdi-chevron-right"></i></a></li>
                                             <li>Staff</li>
                                         </ul>
                                     </div>
@@ -697,8 +697,8 @@
                                 <p><span>Address:</span> ur address goes here,street Crossroad123.</p>
                             </div>
                             <div class="hotel-contact">
-                                <p><sapn>phone:</sapn> 99 55 88586 5478.</p>
-                                <p><span>Email:</span>info@example.com</p>
+                                <p><span>phone:</span>+234 9036356792</p>
+                                <p><span>Email:</span>P's.suite@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -764,7 +764,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-8 col-xs-12">
-                        <p>Copyright© CHONDO 2018.All right reserved.Created by <a href="https://freethemescloud.com/"> Free themes Cloud</a></p>
+                        <p>Copyright© P's Suites 2022.All right reserved.</p>
                     </div>
                     <div class="col-md-6 col-sm-4 col-xs-12">
                         <div class="footer-menu">
