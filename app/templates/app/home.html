@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div class="logo mt-15">
-                                        <a href="index.html"><img src="{% static 'app/images/logo/new_logo.png' %}" alt=""></a>
+                                        <a href="{% url 'home' %}"><img src="{% static 'app/images/logo/new_logo.png' %}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-sm-10 hidden-xs">
@@ -86,7 +86,7 @@
                                         <div class="menu-list hidden-sm hidden-xs">
                                             <nav>
                                                 <ul>
-                                                    <li><a href="index.html">home</a></li>
+                                                    <li><a href="{% url 'home' %}">home</a></li>
                                                     <li><a href="{% url 'about' %}">About</a></li>
                                                     <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                                     <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
@@ -213,7 +213,7 @@
                                 </h1>
                                 <p class="welcome-desc">A great hotel needs a great location, great staff, and a memorable experience. We have those all</p>
                                 <div class="explore">
-                                    <a href="#">EXPLORE IT</a>
+                                    <a href="{% url 'gallery' %}">EXPLORE IT</a>
                                 </div>
                             </div>
                         </div>
