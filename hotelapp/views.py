@@ -15,7 +15,7 @@ from hotelapp.booking_functions.book_room import book_room
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
     # rooms = Room.objects.all()
-    room = Room.objects.filter(category=room_category).first()
+    rooms = Room.objects.filter(category=room_category_url_list[0])
     context = {
         "room_list": room_category_url_list,
         "rooms": rooms
