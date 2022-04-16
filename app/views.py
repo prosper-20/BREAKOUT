@@ -10,6 +10,9 @@ from blog.models import Post
 from .forms import AvailabilityForm
 from hotelapp.booking_functions.get_room_category_human_format import get_room_category_human_format
 
+from hotelapp.booking_functions.get_available_rooms import get_available_rooms
+from hotelapp.booking_functions.book_room import book_room
+
 
 
 
@@ -108,3 +111,18 @@ class TestView(View):
             return render(request, 'app/room_booking.html', context)
         else:
             return HttpResponse('Category does not exist')
+
+    def post(self, request, *args, **kwargs):
+        category = self.kwargs.get('category', None) #Get room category from kwargs
+        
+        form = AvailabilityForm(request.POST) # pass request.POST into AvailabilityForm
+        if form.is_valid():
+            data = form.cleaned_data
+
+        available_rooms = get_available_rooms(category, data['check_in'], data['check_out'])
+
+        if available_rooms is not None:
+            booking = book_room(request, available_rooms[0], data['check_in'], data['check_out'])
+            return HttpResponse(booking)
+        else:
+            return HttpResponse("This category of rooms are fully booked!")

@@ -25,8 +25,8 @@
     <!-- Responsive css -->
     <link rel="stylesheet" href="{% static 'app/css/responsive.css' %}">
     <!-- customizer style css -->
-    <link rel="stylesheet" href="{% static 'app/css/style-customizer.css' %}">
-    <link href="#" data-style="styles" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{% static 'app/css/style-customizer.css' %}">
+    <link href="#" data-style="styles" rel="stylesheet"> -->
     
     <!-- User style -->
     <link rel="stylesheet" href="{% static 'app/css/custom.css' %}">
@@ -159,7 +159,7 @@
                                     <h2>Booking</h2>
                                     <div class="breadcrubs-menu">
                                         <ul>
-                                            <li><a href="#">Home<i class="mdi mdi-chevron-right"></i></a></li>
+                                            <li><a href="{% url 'home' %}">Home<i class="mdi mdi-chevron-right"></i></a></li>
                                             <li>Booking</li>
                                         </ul>
                                     </div>
@@ -203,7 +203,7 @@
                         <div class="booking_form">
                             <div class="form-title">
                                 <h2>Book A Room</h2>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority ve sffered alteration in some form, by injected humour</p>
+                                <p>Pick from our exclusive range of rooms. Just for you!</p>
                             </div>
 
                             <div class="room-booking-box">
@@ -266,7 +266,7 @@
                                         <input type="datetime-local" id="id_check_out" name="check_out">
                                     </div>
                                     <div class="submit-form mt-25">
-                                        <button type="submit">Check Availability</button>
+                                        <button type="submit">Check Availability/Book The Room</button>
                                     </div>
                                 </form>
                             </div>
