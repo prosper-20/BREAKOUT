@@ -207,8 +207,8 @@
                             </div>
 
                             <div class="room-booking-box">
-                                <form action="#">
-                                    <div class="booking-box1 mb-15 fix">
+                                <form id="booking-form" action="" method="POST"></form>
+                                    <!-- <div class="booking-box1 mb-15 fix">
                                         <div class="booking-filed">
                                             <input type="text" name="name" required id="id_name" placeholder="your name" value="Your name">
                                         </div>
@@ -251,6 +251,19 @@
                                     </div>
                                     <div class="booking-comment fix">
                                         <textarea placeholder="comment"></textarea>
+                                    </div> -->
+                                    {% csrf_token %}
+
+                                    <!-- Input Div -->
+                                    <div class="input-div">
+                                        <label for="id_check_in">Check In : </label>
+                                        <input type="datetime-local" id="id_check_in" name="check_in">
+                                    </div>
+                                    <br>
+                                    <!-- Input Div -->
+                                    <div class="input-div">
+                                        <label for="id_check_out">Check Out : </label>
+                                        <input type="datetime-local" id="id_check_out" name="check_out">
                                     </div>
                                     <div class="submit-form mt-25">
                                         <button type="submit">Check Availability</button>
@@ -259,17 +272,17 @@
                             </div>
                         </div>
                     </div>
-                    <h1>Django Form</h1>
+                    <!-- <h1>Django Form</h1>
                     <form action="" method="post">
                         {{ form|crispy }}
                         {% csrf_token %}
-                    </form>
+                    </form> -->
                     <div class="col-md-4">
                         <div class="selcted-room">
                             <div class="select-room-inner">
                                 <div class="select-room-title">
                                     <h3>{{room_category}}</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available,</p>
+                                    <p>Enjoy comfort at its peak!</p>
                                 </div>
                                 <div class="room-rent fix mb-45">
                                     <div class="room-rent-img">
