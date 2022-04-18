@@ -52,7 +52,8 @@ class RoomDetailView(View):
                 "form": form,
                 "room": room #new
             }
-            return render(request, 'hotel/room_detail_view.html', context)
+            # You changed form hotrl/room_detail_view.html
+            return render(request, 'app/room_booking.html', context)
         else:
             return HttpResponse('Category does not exist')
         
