@@ -88,7 +88,7 @@ class PostCommentView(LoginRequiredMixin, CreateView):
 
 
 def travel_view(request):
-    posts = Post.objects.filter(category=1).all().order_by('-id')
+    posts = Post.objects.filter(category=1).first()
     context = {
         "posts": posts,
     }
