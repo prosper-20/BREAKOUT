@@ -12,7 +12,7 @@ from hotelapp.booking_functions.get_room_category_human_format import get_room_c
 
 from hotelapp.booking_functions.get_available_rooms import get_available_rooms
 from hotelapp.booking_functions.book_room import book_room
-
+from hotelapp.booking_functions.get_room_cat_url_list import get_room_cat_url_list
 
 
 

@@ -86,3 +86,10 @@ class PostCommentView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse_lazy('post-detail', kwargs={'pk': self.kwargs['pk']})
 
+
+def travel_view(request):
+    posts = Post.objects.filter(category=1).all().order_by('-id')
+    context = {
+        "posts": posts,
+    }
+    return render(request, "blog/travel_detail.html", context)
