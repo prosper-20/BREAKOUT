@@ -2,7 +2,7 @@ import email
 from logging import PlaceHolder
 import re
 from django import forms
-from .models import Category, Contact
+from .models import Category, Message
 
 
 
@@ -28,6 +28,7 @@ class AvailabilityForm(forms.Form):
 # You created this for the contact form
 
 class ContactForm(forms.ModelForm):
-    model = Contact
+    class Meta:
+        model = Message
 
-    fields = ["name", "email", "message"]
+        fields = ["name", "email", "message"]

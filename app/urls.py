@@ -14,7 +14,7 @@ urlpatterns = [
     path("gallery/", views.gallery, name="gallery"),
     path('staff/', views.staff, name="staff"),
     path('rooms/', views.rooms, name="rooms"),
-    path('tester/<category>', TestView.as_view(), name="test_booking" )
+    path('tester/<category>', TestView.as_view(), name="test_booking"),
     path('contact-us/', contact_us, name='contact_us')
 
 ]
