@@ -138,7 +138,7 @@ class TestView(View):
 
 
 
-def contact(request):
+def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

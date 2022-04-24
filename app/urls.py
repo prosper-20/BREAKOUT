@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import HomeView, RoomDetailView, contact, about, search_rooms, news, TestView, staff, rooms
+from .views import HomeView, RoomDetailView, contact, about, contact_us, search_rooms, news, TestView, staff, rooms
 # tester
 from . import views
 
@@ -15,7 +15,7 @@ urlpatterns = [
     path('staff/', views.staff, name="staff"),
     path('rooms/', views.rooms, name="rooms"),
     path('tester/<category>', TestView.as_view(), name="test_booking" )
-    path('contact-us/', )
+    path('contact-us/', contact_us, name='contact_us')
 
 ]
  
