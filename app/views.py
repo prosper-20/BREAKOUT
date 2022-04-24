@@ -143,10 +143,12 @@ def contact_us(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get("name")
-            email = form.cleaned_data.get("name")
-            message = form.cleaned_data.get("name")
+            email = form.cleaned_data.get("email")
+            message = form.cleaned_data.get("message")
             form.save()
             mydict = {'username': username, 'email':email, 'message': message}
+            mail_settings = MailSettings()
+            mail_settings.sandbox_mode = SandBoxMode(False)
             html_template = 'app/contact_email.html'
             html_message = render_to_string(html_template, context=mydict)
             subject = 'Welcome to Service-Verse'
