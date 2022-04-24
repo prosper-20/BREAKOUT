@@ -2,7 +2,7 @@ import email
 from logging import PlaceHolder
 import re
 from django import forms
-from .models import Category
+from .models import Category, Contact
 
 
 
@@ -22,3 +22,10 @@ class AvailabilityForm(forms.Form):
     room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
     check_in = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
     check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
+
+
+
+# You created this for the contact form
+
+class Contact(forms.ModelForm):
+    model = Contact

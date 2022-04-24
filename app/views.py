@@ -126,3 +126,9 @@ class TestView(View):
             return HttpResponse(booking)
         else:
             return HttpResponse("This category of rooms are fully booked!")
+
+
+
+
+def contact(request):
+    
