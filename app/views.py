@@ -1,3 +1,4 @@
+from email import message
 import imp
 from re import template
 from typing import List
@@ -14,6 +15,13 @@ from hotelapp.booking_functions.get_available_rooms import get_available_rooms
 from hotelapp.booking_functions.book_room import book_room
 from hotelapp.booking_functions.get_room_cat_url_list import get_room_cat_url_list
 
+# For Contact Email Sending
+from django.shortcuts import redirect, render
+from django.contrib import messages
+from django.contrib.auth.models import auth, User
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from django.conf import settings
 
 
 class HomeView(ListView):
@@ -132,5 +140,23 @@ class TestView(View):
 
 def contact(request):
     if request.method == 'POST':
-        form = 
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get("name")
+            email = form.cleaned_data.get("name")
+            message = form.cleaned_data.get("name")
+            form.save()
+            mydict = {'username': username, 'email':email, 'message': message}
+            html_template = 'app/contact_email.html'
+            html_message = render_to_string(html_template, context=mydict)
+            subject = 'Welcome to Service-Verse'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [email]
+            message = EmailMessage(subject, html_message,
+                                   email_from, recipient_list)
+            message.content_subtype = 'html'
+            message.send()
+            return redirect("/")
+    else:
+        return render(request, 'contact_us_2.html')
     
