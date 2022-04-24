@@ -138,3 +138,12 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_URL = "login"
 
 LOGIN_REDIRECT_URL = "/"
+
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'edwardprosper001@gmail.com'
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
