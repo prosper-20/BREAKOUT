@@ -7,7 +7,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .models import Room, RoomImage, Staff, HotelImage
 from django.views.generic import ListView, DetailView, FormView, View
 from blog.models import Post
-from .forms import AvailabilityForm
+from .forms import AvailabilityForm, ContactForm
 from hotelapp.booking_functions.get_room_category_human_format import get_room_category_human_format
 
 from hotelapp.booking_functions.get_available_rooms import get_available_rooms
@@ -131,4 +131,6 @@ class TestView(View):
 
 
 def contact(request):
+    if request.method == 'POST':
+        form = 
     

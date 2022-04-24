@@ -27,5 +27,7 @@ class AvailabilityForm(forms.Form):
 
 # You created this for the contact form
 
-class Contact(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     model = Contact
+
+    fields = ["name", "email", "message"]
