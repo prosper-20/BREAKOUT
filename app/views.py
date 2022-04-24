@@ -158,5 +158,9 @@ def contact(request):
             message.send()
             return redirect("/")
     else:
-        return render(request, 'contact_us_2.html')
+        form = ContactForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'app/contact_us_2.html', context)
     
