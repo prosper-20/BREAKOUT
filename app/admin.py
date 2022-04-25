@@ -1,9 +1,18 @@
 from django.contrib import admin
-from .models import Category, Room, RoomImage, Staff, HotelImage
+from .models import Category, Room, RoomImage, Staff, HotelImage, Message
 
 admin.site.register(Category)
 admin.site.register(Staff)
 admin.site.register(HotelImage)
+
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "message",)
+
+
+admin.site.register(Message, MessageAdmin)
+
+
+
 
 class RoomImageAdmin(admin.StackedInline):
     model = RoomImage
@@ -20,3 +29,5 @@ class RoomAdmin(admin.ModelAdmin):
 @admin.register(RoomImage)
 class RoomImageAdmin(admin.ModelAdmin):
     pass
+
+
