@@ -167,5 +167,5 @@ def contact_us(request):
         'form': form
     }
     # changed from contact_us_2.html
-    return render(request, 'app/contact_us_2.html', context)
+    return render(request, 'app/contact-us.html', context)
     
