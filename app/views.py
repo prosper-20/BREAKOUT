@@ -1,5 +1,6 @@
 from email import message
 import imp
+from operator import pos
 from re import template
 from typing import List
 from unicodedata import category
@@ -26,11 +27,24 @@ from django.core.mail import EmailMessage, send_mail
 from sendgrid.helpers.mail import SandBoxMode, MailSettings
 
 
-class HomeView(ListView):
-    model = Room
-    template_name = 'app/home.html'
-    context_object_name = "rooms"
-    extra_context={'staffs': Staff.objects.all(), 'posts': Post.objects.all()}
+# class HomeView(ListView):
+#     model = Room
+#     template_name = 'app/home.html'
+#     context_object_name = "rooms"
+#     extra_context={'staffs': Staff.objects.all(), 'posts': Post.objects.all()}
+
+
+def HomeView(request):
+    room = Room.objects.all()
+    staff = Staff.objects.all()
+    posts = Post.objects.all()
+    template_name = "app/home.html"
+    context = {
+        "room": room,
+        "staff": staff,
+        "posts": posts
+    }
+    return render(request, template_name, context)
 
 
 class RoomDetailView(DetailView):
