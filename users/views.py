@@ -61,3 +61,30 @@ def login(request):
             return redirect("login")
     #You changed from login.htnl to form-login
     return render(request, 'users/login_2.html')
+
+
+def register(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        password2 = request.POST["password2"]
+
+
+        if password == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, "Oops, the username entered already exixts")
+                return redirect("register")
+            elif User.objects.filter(email=email).exits():
+                messages.info(request, "Email address already taken")
+            else:
+                user = User.objects.create_user(username=username,
+                email=email, password=password)
+                user.save()
+                messages.info(request, "Hi {username}, your account creation was successful! Kindly login below")
+                return redirect("login")
+        else:
+            messages.error(request, "Both passwords didn't match")
+            return redirect("register")
+    
+    return render(request, "users/regitser_2.html")
