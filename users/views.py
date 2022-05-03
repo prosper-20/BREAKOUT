@@ -87,4 +87,4 @@ def register(request):
             messages.error(request, "Both passwords didn't match")
             return redirect("register")
     
-    return render(request, "users/regitser_2.html")
+    return render(request, "users/register_2.html")
