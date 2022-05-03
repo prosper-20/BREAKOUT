@@ -17,19 +17,20 @@
 			<div class="form-left">
 				<img src="{% static 'users/register_images/form-v6.jpg' %}" alt="form">
 			</div>
-			<form class="form-detail" action="#" method="post">
+			<form class="form-detail" action="" method="post">
+                {% csrf_token %}
 				<h2>Register Form</h2>
 				<div class="form-row">
-					<input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
+					<input type="text" name="name" id="id_name" class="input-text" placeholder="Your Name" required>
 				</div>
 				<div class="form-row">
-					<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Email Address" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					<input type="email" name="email" id="id_email" class="input-text" placeholder="Email Address" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
 				</div>
 				<div class="form-row">
-					<input type="password" name="password" id="password" class="input-text" placeholder="Password" required>
+					<input type="password" name="password" id="id_password" class="input-text" placeholder="Password" required>
 				</div>
 				<div class="form-row">
-					<input type="password" name="comfirm-password" id="comfirm-password" class="input-text" placeholder="Comfirm Password" required>
+					<input type="password" name="password2" id="id_password2" class="input-text" placeholder="Comfirm Password" required>
 				</div>
 				<div class="form-row-last">
 					<input type="submit" name="register" class="register" value="Register">
