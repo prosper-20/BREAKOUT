@@ -81,7 +81,7 @@ def register(request):
                 user = User.objects.create_user(username=username,
                 email=email, password=password)
                 user.save()
-                messages.info(request, "Hi {username}, your account creation was successful! Kindly login below")
+                messages.info(request, f"Hi {username}, your account creation was successful! Kindly login below")
                 return redirect("login")
         else:
             messages.error(request, "Both passwords didn't match")

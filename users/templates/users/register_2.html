@@ -20,6 +20,13 @@
         <section class="signup">
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
                         {% csrf_token %}
@@ -46,7 +53,7 @@
                         </div>
                     </form>
                     <p class="loginhere">
-                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                        Have already an account ? <a href="{% url 'login' %}" class="loginhere-link">Login here</a>
                     </p>
                 </div>
             </div>
