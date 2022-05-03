@@ -11,6 +11,8 @@ from hotelapp.booking_functions.get_room_category_human_format import get_room_c
 from hotelapp.booking_functions.get_available_rooms import get_available_rooms
 from hotelapp.booking_functions.book_room import book_room
 # Create your views here.
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
@@ -36,7 +38,7 @@ class BookingListView(ListView):
             return booking_list
 
 
-class RoomDetailView(View):
+class RoomDetailView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         category = self.kwargs.get('category', None)
 
