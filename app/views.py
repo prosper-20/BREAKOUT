@@ -35,6 +35,9 @@ from sendgrid.helpers.mail import SandBoxMode, MailSettings
 
 
 def HomeView(request):
+    room_category_url_list = get_room_cat_url_list()
+    # rooms = Room.objects.all()
+    rooms = Room.objects.filter(category=room_category_url_list[0][0])
     room = Room.objects.all()
     staff = Staff.objects.all()
     posts = Post.objects.all()
@@ -42,7 +45,9 @@ def HomeView(request):
     context = {
         "room": room,
         "staff": staff,
-        "posts": posts
+        "posts": posts,
+        "room_list": room_category_url_list,
+        "rooms": rooms
     }
     return render(request, template_name, context)
 

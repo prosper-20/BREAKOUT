@@ -282,6 +282,7 @@
                 <div class="our-room-show">
                     <div class="row">
                         <div class="carousel-list">
+                            {% for room_category, room_url in room_list %}
                             {% for room in rooms %}
                             <div class="col-md-4">
                                 <div class="single-room">
@@ -292,18 +293,19 @@
                                     <div class="room-desc">
                                         <div class="room-name">
                                             <!-- <h3><a href="#">Delux room</a></h3> -->
-                                            <h3><a href="{{ room_url }}">{{ room.category }}</a></h3>
+                                            <h3><a href="{{ room_url }}">{{ room_category }}</a></h3>
                                         </div>
                                         <div class="room-rent">
                                             <!-- <h5>€ 200 / <span>Night</span></h5> -->
                                             <h5>€ {{ room.price }} / <span>Night</span></h5>
                                         </div>
                                         <div class="room-book">
-                                            <a href="">Book now</a>
+                                            <a href="{{ room_url }}">Book now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
                             {% endfor %}
                             <!-- <div class="col-md-4">
                                 <div class="single-room">
