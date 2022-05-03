@@ -75,7 +75,7 @@ def register(request):
             if User.objects.filter(username=username).exists():
                 messages.info(request, "Oops, the username entered already exixts")
                 return redirect("register")
-            elif User.objects.filter(email=email).exits():
+            elif User.objects.filter(email=email).exists():
                 messages.info(request, "Email address already taken")
             else:
                 user = User.objects.create_user(username=username,
