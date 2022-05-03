@@ -48,7 +48,7 @@ def profile(request):
 def login(request):
     if request.method == "POST":
         username = request.POST["username"]
-        password = request.POST["passowrd"]
+        password = request.POST["password"]
 
         user = auth.authenticate(username=username, password=password)
 
@@ -60,4 +60,4 @@ def login(request):
             messages.error(request, "Credentials not valid")
             return redirect("login")
     #You changed from login.htnl to form-login
-    return render(request, 'login.html')
+    return render(request, 'users/login_2.html')
