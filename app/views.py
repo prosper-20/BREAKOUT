@@ -213,6 +213,6 @@ def contact_us(request):
         return redirect("/")
 
     else:
-        return render(request, 'contact-us.html')
+        return render(request, 'app/contact-us.html')
             
     
