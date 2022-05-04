@@ -6,7 +6,7 @@ from typing import List
 from unicodedata import category
 from urllib import request
 from django.shortcuts import render, get_object_or_404, HttpResponse
-from .models import Room, RoomImage, Staff, HotelImage
+from .models import Room, RoomImage, Staff, HotelImage, Message
 from django.views.generic import ListView, DetailView, FormView, View
 from blog.models import Post
 from .forms import AvailabilityForm, ContactForm
@@ -159,32 +159,60 @@ class TestView(View):
 
 
 
+# def contact_us(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get("name")
+#             email = form.cleaned_data.get("email")
+#             message = form.cleaned_data.get("message")
+#             form.save()
+#             mydict = {'username': username, 'email':email, 'message': message}
+#             mail_settings = MailSettings()
+#             mail_settings.sandbox_mode = SandBoxMode(False)
+#             html_template = 'app/contact_email.html'
+#             html_message = render_to_string(html_template, context=mydict)
+#             subject = 'Welcome to Service-Verse'
+#             email_from = settings.EMAIL_HOST_USER
+#             recipient_list = [email]
+#             message = EmailMessage(subject, html_message,
+#                                    email_from, recipient_list)
+#             message.content_subtype = 'html'
+#             message.send()
+#             return redirect("/")
+#     else:
+#         form = ContactForm()
+#     context = {
+#         'form': form
+#     }
+#     # changed from contact_us_2.html
+#     return render(request, 'app/contact_us_2.html', context)
+
+
 def contact_us(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get("name")
-            email = form.cleaned_data.get("email")
-            message = form.cleaned_data.get("message")
-            form.save()
-            mydict = {'username': username, 'email':email, 'message': message}
-            mail_settings = MailSettings()
-            mail_settings.sandbox_mode = SandBoxMode(False)
-            html_template = 'app/contact_email.html'
-            html_message = render_to_string(html_template, context=mydict)
-            subject = 'Welcome to Service-Verse'
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = [email]
-            message = EmailMessage(subject, html_message,
-                                   email_from, recipient_list)
-            message.content_subtype = 'html'
-            message.send()
-            return redirect("/")
+    if request.method == "POST":
+        username = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        new = Message.objects.create(name=username, email=email,
+        message=message)
+        new.save()
+        mydict = {'username': username, 'email':email, 'message': message}
+        mail_settings = MailSettings()
+        mail_settings.sandbox_mode = SandBoxMode(False)
+        html_template = 'app/contact_email.html'
+        html_message = render_to_string(html_template, context=mydict)
+        subject = 'Welcome to Service-Verse'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+        message = EmailMessage(subject, html_message,
+                                email_from, recipient_list)
+        message.content_subtype = 'html'
+        message.send()
+        return redirect("/")
+
     else:
-        form = ContactForm()
-    context = {
-        'form': form
-    }
-    # changed from contact_us_2.html
-    return render(request, 'app/contact_us_2.html', context)
+        return render(request, 'contact-us.html')
+            
     
