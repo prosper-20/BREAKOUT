@@ -39,12 +39,12 @@ def HomeView(request):
     # rooms = Room.objects.all()
     rooms = Room.objects.filter(category=room_category_url_list[0][0])
     room = Room.objects.all()
-    staff = Staff.objects.all()
+    staffs = Staff.objects.all()
     posts = Post.objects.all()
     template_name = "app/home.html"
     context = {
         "room": room,
-        "staff": staff,
+        "staffs": staffs,
         "posts": posts,
         "room_list": room_category_url_list,
         "rooms": rooms
@@ -186,5 +186,5 @@ def contact_us(request):
         'form': form
     }
     # changed from contact_us_2.html
-    return render(request, 'app/contact-us.html', context)
+    return render(request, 'app/contact_us_2.html', context)
     
