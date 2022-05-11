@@ -1,4 +1,5 @@
 {% load static %}
+{% load social_share %}
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -464,7 +465,7 @@
                     <div class="col-md-12">
                         <div class="section-title mb-80">
                             <h2>our <span>services</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p>
+                            <p>These are some of the perks we offer to our customers.</p>
                         </div>
                     </div>
                 </div>
@@ -564,7 +565,7 @@
                     <div class="col-md-12">
                         <div class="section-title mb-80">
                             <h2>our <span>Staff</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered by injected humour.</p>
+                            <p>P's Suites prides herself in the high level of proficient and competent staff members.</p>
                         </div>
                     </div>
                 </div>
@@ -898,7 +899,8 @@
                                         </div>
                                         <div class="news-share">
                                             <p>Share:</p>
-                                            <a href="#"><i class="mdi mdi-facebook"></i></a>
+                                            <!-- <a href="#"><i class="mdi mdi-facebook"></i></a> -->
+                                            {% post_to_facebook 'post-detail' post.id "<p style='color: green;'><i class="mdi mdi-facebook"></i></p>" %}
                                             <a href="#"><i class="mdi mdi-rss"></i></a>
                                             <a href="#"><i class="mdi mdi-google-plus"></i></a>
                                             <a href="#"><i class="mdi mdi-instagram"></i></a>
