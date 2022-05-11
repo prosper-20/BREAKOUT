@@ -5,6 +5,11 @@ from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
+from django.conf import settings
+from django.core.mail import EmailMessage, send_mail
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage, send_mail
+from sendgrid.helpers.mail import SandBoxMode, MailSettings
 
 # def register(request):
 #     if request.method == 'POST':
@@ -80,7 +85,17 @@ def register(request):
             else:
                 user = User.objects.create_user(username=username,
                 email=email, password=password)
+                mydict = {'username': username}
                 user.save()
+                html_template = 'app/email_index.html'
+                html_message = render_to_string(html_template, context=mydict)
+                subject = 'Welcome to Service-Verse'
+                email_from = settings.EMAIL_HOST_USER
+                recipient_list = [email]
+                message = EmailMessage(subject, html_message,
+                                   email_from, recipient_list)
+                message.content_subtype = 'html'
+                message.send()
                 messages.info(request, f"Hi {username}, your account creation was successful! Kindly login below")
                 return redirect("login")
         else:
