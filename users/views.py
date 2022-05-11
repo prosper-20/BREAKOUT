@@ -89,7 +89,7 @@ def register(request):
                 user.save()
                 html_template = 'app/email_index.html'
                 html_message = render_to_string(html_template, context=mydict)
-                subject = 'Welcome to Service-Verse'
+                subject = "Welcome@P'suites"
                 email_from = settings.EMAIL_HOST_USER
                 recipient_list = [email]
                 message = EmailMessage(subject, html_message,
