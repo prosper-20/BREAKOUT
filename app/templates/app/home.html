@@ -172,37 +172,59 @@
                                     <form action="" method="post">
                                         {% csrf_token %}
                                         <div class="b-date arrive mb-15">
-                                            <input class="date-picker" type="text" placeholder="Arrive Date">
+                                            <input type="text" name="check_in" required id="id_check_in" placeholder="Arrive Date">
+                                            <!-- <input class="date-picker" type="text" placeholder="Arrive Date"> -->
                                             <i class="mdi mdi-calendar-text"></i>
                                         </div>
                                         <div class="b-date departure mb-15">
-                                            <input class="date-picker" type="text" placeholder="Departure Date">
+                                            <input type="text" name="check_out" required id="id_check_out" placeholder="Departure Date">
+                                            <!-- <input class="date-picker" type="text" placeholder="Departure Date"> -->
                                             <i class="mdi mdi-calendar-text"></i>
                                         </div>
                                         <div class="select-book mb-15">
-                                            <select name="book" class="select-booking">
+                                            <!-- <select name="book" class="select-booking">
                                                 <option value="" selected>Adult</option>
                                                 <option value="1">Teen</option>
                                                 <option value="1">old</option>
-                                            </select>
+                                            </select> -->
+                                            <input type="number" name="adults" value="1" required id="id_adults">
                                         </div>
                                         <div class="select-book  mb-30">
-                                            <select name="book" class="select-booking">
+                                            <!-- <select name="book" class="select-booking">
                                                 <option value="" selected>Room</option>
                                                 <option value="1">Roome 101</option>
                                                 <option value="1">Roome 102</option>
-                                            </select>
+                                            </select> -->
+                                            <select name="room" required id="id_room">
+                                                <option value="" selected>---------</option>
+                                              
+                                                <option value="STANDARD">STANDARD</option>
+                                              
+                                                <option value="EXECUTIVE">EXECUTIVE</option>
+                                              
+                                                <option value="BUSINESS">BUSINESS</option>
+                                              
+                                                <option value="PREMIUM">PREMIUM</option>
+                                              
+                                                <option value="DELUXE">DELUXE</option>
+                                              
+                                                <option value="PENTHOUSE">PENTHOUSE</option>
+                                              
+                                                <option value="KING">KING</option>
                                         </div>
 
 
-                                        <!-- <div class="b-date arrive mb-15">
-                                            <input class="date-picker" type="text" placeholder="Arrive Date">
-                                            <i class="mdi mdi-calendar-text"></i>
-                                        </div>
                                         <div class="b-date arrive mb-15">
-                                            <input class="date-picker" type="text" placeholder="Arrive Date">
+                                            <input type="email" name="email" maxlength="254" required id="id_email" placeholder="Your Email">
+                                            <!-- <input class="date-picker" type="text" placeholder="Arrive Date"> -->
+                                            <i class="mdi mdi-email"></i>
+                                        </div>
+
+                                        <div class="b-date arrive mb-15">
+                                            <input type="text" name="phone" maxlength="20" required id="id_phone" placeholder="Phone Number">
+                                            <!-- <input class="date-picker" type="text" placeholder="Arrive Date"> -->
                                             <i class="mdi mdi-calendar-text"></i>
-                                        </div> -->
+                                        </div> 
                                          
                                         <div class="submit-form">
                                             <button type="submit">Check Availability</button>

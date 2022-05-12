@@ -60,7 +60,7 @@ def HomeView(request):
         phone = request.POST["phone"]
 
 
-        user_booking = Homebooking.objects.create(check_in=check_in,
+        user_booking = HomeBooking.objects.create(check_in=check_in,
         check_out=check_out, adults=adults, room=room, email=email,
         phone=phone)
         user_booking.save()
