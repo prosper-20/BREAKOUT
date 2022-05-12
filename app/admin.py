@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Room, RoomImage, Staff, HotelImage, Message
+from .models import Category, Room, RoomImage, Staff, HotelImage, Message, HomeBooking
 
 admin.site.register(Category)
 admin.site.register(Staff)
