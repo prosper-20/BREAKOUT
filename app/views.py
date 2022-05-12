@@ -25,6 +25,8 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.core.mail import EmailMessage, send_mail
 from sendgrid.helpers.mail import SandBoxMode, MailSettings
+from .models import HomeBooking
+from .forms import HotelBookingForm
 
 
 # class HomeView(ListView):
@@ -215,4 +217,34 @@ def contact_us(request):
     else:
         return render(request, 'app/contact-us.html')
             
-    
+
+
+def homebooking(request):
+    if request.method == "POST":
+        form = HotelBookingForm(request.POST)
+        if form.is_valid():
+            check_in = form.cleaned_data.get("check_in")
+            check_out = form.cleaned_data.get('check_out')
+            adults = form.cleaned_data.get("adults")
+            room = form.cleaned_data.get("room")
+            email = form.cleaned_data.get("email")
+            phone = form.cleaned_data.get("phone")
+
+            form.save()
+            messages.sucess(request, f"A message has been sent to your mail.")
+            # check_in = request.POST["check_in"]
+            # check_out = request.POST["check_out"]
+            # adults = request.POST["adults"]
+            # room = request.POST["room"]
+            # email = request.POST["email"]
+            # phone = request.POST["phone"]
+
+
+            # user_booking = homebooking.objects.create(check_in=check_in,
+            # check_out=check_out, adults=adults, room=room, email=email,
+            # phone=phone)
+            # user_booking.save()
+    else:
+        form = HotelBookingForm()
+        return render(request, "app/home_booking.html", {'form': form})
+
