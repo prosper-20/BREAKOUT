@@ -64,6 +64,17 @@ def HomeView(request):
         check_out=check_out, adults=adults, room=room, email=email,
         phone=phone)
         user_booking.save()
+        mydict = {'check_in': check_in, 'check_out': check_out, 'adults': adults, 'room': room, 'email': email, 'phone': phone}
+        # FOR SENDING AUTO MAILS
+        html_template = 'app/main_email.html'
+        html_message = render_to_string(html_template, context=mydict)
+        subject = 'Appointment Reservation'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+        message = EmailMessage(subject, html_message,
+                                email_from, recipient_list)
+        message.content_subtype = 'html'
+        message.send()
         messages.success(request, "Reservation has been placed")
         return redirect("contact")
     else:
