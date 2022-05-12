@@ -31,3 +31,12 @@ class RoomImageAdmin(admin.ModelAdmin):
     pass
 
 
+class HomeBookingAdmin(admin.ModelAdmin):
+    model = HomeBooking
+
+    list_display = ["check_in", "check_out", "adults", "room"]
+
+
+admin.site.register(HomeBooking, HomeBookingAdmin)
+
+
