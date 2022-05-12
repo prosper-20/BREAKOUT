@@ -108,7 +108,7 @@ class HomeBooking(models.Model):
     )
     check_in = models.DateField()
     check_out = models.DateField()
-    adults = models.IntegerField(default=1)
+    adults = models.CharField(max_length=5)
     room = models.CharField(max_length=12, choices=ROOM_CATEGORIES)
     email = models.EmailField()
     phone = models.CharField(max_length=20)

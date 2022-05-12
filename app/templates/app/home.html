@@ -181,22 +181,23 @@
                                             <!-- <input class="date-picker" type="text" placeholder="Departure Date"> -->
                                             <i class="mdi mdi-calendar-text"></i>
                                         </div>
-                                        <div class="select-book mb-15">
+                                        <div class="select-book mb-10">
                                             <!-- <select name="book" class="select-booking">
                                                 <option value="" selected>Adult</option>
                                                 <option value="1">Teen</option>
                                                 <option value="1">old</option>
                                             </select> -->
-                                            <input type="number" name="adults" value="1" required id="id_adults">
+                                            <input type="text" name="adults" maxlength="5" required id="id_adults" placeholder="No. of Adults">
+                                            <i class="mdi mdi-account-text"></i>
                                         </div>
-                                        <div class="select-book  mb-30">
+                                        <div class="select-book  mb-15">
                                             <!-- <select name="book" class="select-booking">
                                                 <option value="" selected>Room</option>
                                                 <option value="1">Roome 101</option>
                                                 <option value="1">Roome 102</option>
                                             </select> -->
                                             <select name="room" required id="id_room">
-                                                <option value="" selected>---------</option>
+                                                <option value="" selected>Choose A Room</option>
                                               
                                                 <option value="STANDARD">STANDARD</option>
                                               
@@ -211,19 +212,28 @@
                                                 <option value="PENTHOUSE">PENTHOUSE</option>
                                               
                                                 <option value="KING">KING</option>
+                                            </select>
                                         </div>
 
 
+                                        <!-- <div class="b-date arrive mb-30">
+                                            <input type="email" name="email" maxlength="254" required id="id_email" placeholder="Your Email">
+                                            <input class="date-picker" type="text" placeholder="Arrive Date"> -->
+                                            <!-- <i class="mdi mdi-email"></i> -->
+                                        <!-- </div> -->
+                                        
+                                        
                                         <div class="b-date arrive mb-15">
                                             <input type="email" name="email" maxlength="254" required id="id_email" placeholder="Your Email">
                                             <!-- <input class="date-picker" type="text" placeholder="Arrive Date"> -->
-                                            <i class="mdi mdi-email"></i>
+                                            <!-- <i class="mdi mdi-phone"></i> -->
                                         </div>
+
 
                                         <div class="b-date arrive mb-15">
                                             <input type="text" name="phone" maxlength="20" required id="id_phone" placeholder="Phone Number">
                                             <!-- <input class="date-picker" type="text" placeholder="Arrive Date"> -->
-                                            <i class="mdi mdi-calendar-text"></i>
+                                            <i class="mdi mdi-phone"></i>
                                         </div> 
                                          
                                         <div class="submit-form">
