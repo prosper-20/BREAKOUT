@@ -166,11 +166,12 @@
                             <div class="booking-box">
                                 <div class="booking-title">
                                     <h3>Book A Room</h3>
-                                    <p>Select from a vast range of exquisite rooms.</p>
+                                    <p>Pick from our exclusive range of rooms. Just for you!</p></p>
                                 </div>
                                 <div class="booking-form">
-                                    <form action="#">
-                                        <div class="b-date arrive mb-15">
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        <!-- <div class="b-date arrive mb-15">
                                             <input class="date-picker" type="text" placeholder="Arrive Date">
                                             <i class="mdi mdi-calendar-text"></i>
                                         </div>
@@ -191,8 +192,19 @@
                                                 <option value="1">Roome 101</option>
                                                 <option value="1">Roome 102</option>
                                             </select>
+                                        </div> -->
+                                         <!-- Input Div -->
+                                         <div class="input-div">
+                                            <label for="id_check_in">Check In : </label>
+                                            <input type="datetime-local" id="id_check_in" name="check_in">
                                         </div>
-                                        <div class="submit-form">
+                                        <br>
+                                        <!-- Input Div -->
+                                        <div class="input-div">
+                                            <label for="id_check_out">Check Out : </label>
+                                            <input type="datetime-local" id="id_check_out" name="check_out">
+                                        </div>
+                                        <div class="submit-form mt-25">
                                             <button type="submit">Check Availability</button>
                                         </div>
                                     </form>
