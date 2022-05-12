@@ -50,7 +50,24 @@ def HomeView(request):
         "room_list": room_category_url_list,
         "rooms": rooms
     }
-    return render(request, template_name, context)
+    # THIS IS WHERE YOU STARTED ADDING THINGS FOR THE FORM ON THE 1ST PAGE
+    if request.method == 'POST':
+        check_in = request.POST["check_in"]
+        check_out = request.POST["check_out"]
+        adults = request.POST["adults"]
+        room = request.POST["room"]
+        email = request.POST["email"]
+        phone = request.POST["phone"]
+
+
+        user_booking = Homebooking.objects.create(check_in=check_in,
+        check_out=check_out, adults=adults, room=room, email=email,
+        phone=phone)
+        user_booking.save()
+        messages.success(request, "Reservation has been placed")
+        return redirect("contact")
+    else:
+        return render(request, template_name, context)
 
 
 class RoomDetailView(DetailView):

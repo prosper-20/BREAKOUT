@@ -36,7 +36,6 @@ class ContactForm(forms.ModelForm):
 
 
 class HotelBookingForm(forms.ModelForm):
-    issue_date = forms.DateField(widget=forms.DateInput(format = '%Y/%m/%d'), input_formats=settings.DATE_INPUT_FORMATS)
     class Meta:
         model = HomeBooking
 
