@@ -2,7 +2,7 @@ import email
 from logging import PlaceHolder
 import re
 from django import forms
-from .models import Category, Message
+from .models import Category, Message, HomeBooking
 
 
 
@@ -32,3 +32,10 @@ class ContactForm(forms.ModelForm):
         model = Message
 
         fields = ["name", "email", "message"]
+
+
+class HotelBookingForm(forms.ModelForm):
+    class Meta:
+        model = HomeBooking
+
+        fields = ["check_in", "check_out", "adults", "room", "email", "phone"]
