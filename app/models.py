@@ -92,4 +92,26 @@ class Message(models.Model):
     def __str__(self):
         return f"{self.name} - {self.email}"
 
+
+# YOU JUST CREATED THIS FOR THE HOMEPAGE BOOKING
+
+class HomeBooking(models.Model):
+    ROOM_CATEGORIES = (
+        ('STANDARD', 'STANDARD'),
+        ('EXECUTIVE', 'EXECUTIVE'),
+        ('BUSINESS', 'BUSINESS'),
+        ('PREMIUM', 'PREMIUM'),
+        ('DELUXE', 'DELUXE'),
+        ('PENTHOUSE', 'PENTHOUSE'),
+        ('KING', 'KING')
+
+    )
+    check_in = models.DateField()
+    check_out = models.DateField()
+    adults = models.IntegerField(default=1)
+    room = models.CharField(max_length=12, choices=ROOM_CATEGORIES)
+    email = models.EmailField()
+    
+
+
         
