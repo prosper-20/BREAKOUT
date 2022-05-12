@@ -148,3 +148,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'edwardprosper001@gmail.com'
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
+
+
+
+DATE_INPUT_FORMATS = ('%Y-%m-%d')

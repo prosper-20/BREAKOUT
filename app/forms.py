@@ -3,6 +3,7 @@ from logging import PlaceHolder
 import re
 from django import forms
 from .models import Category, Message, HomeBooking
+from django.conf import settings
 
 
 
@@ -35,7 +36,9 @@ class ContactForm(forms.ModelForm):
 
 
 class HotelBookingForm(forms.ModelForm):
+    issue_date = forms.DateField(widget=forms.DateInput(format = '%Y/%m/%d'), input_formats=settings.DATE_INPUT_FORMATS)
     class Meta:
         model = HomeBooking
+
 
         fields = ["check_in", "check_out", "adults", "room", "email", "phone"]

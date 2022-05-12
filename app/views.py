@@ -38,7 +38,6 @@ from .forms import HotelBookingForm
 
 def HomeView(request):
     room_category_url_list = get_room_cat_url_list()
-    # rooms = Room.objects.all()
     rooms = Room.objects.filter(category=room_category_url_list[0][0])
     room = Room.objects.all()
     staffs = Staff.objects.all()
@@ -231,7 +230,8 @@ def homebooking(request):
             phone = form.cleaned_data.get("phone")
 
             form.save()
-            messages.sucess(request, f"A message has been sent to your mail.")
+            messages.success(request, f"A message has been sent to your mail.")
+            return redirect("home")
             # check_in = request.POST["check_in"]
             # check_out = request.POST["check_out"]
             # adults = request.POST["adults"]
@@ -246,5 +246,5 @@ def homebooking(request):
             # user_booking.save()
     else:
         form = HotelBookingForm()
-        return render(request, "app/home_booking.html", {'form': form})
+    return render(request, "app/home_booking.html", {'form': form})
 
