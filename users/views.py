@@ -114,7 +114,13 @@ def touch(request):
         touch_name = request.POST["touch_name"]
         touch_email = request.POST["touch_email"]
 
-
-        my_touch = Touch.objects.create(touch_name=touch_name
-        touch_email=email)
+        my_touch = Touch.objects.create(touch_name=touch_name,
+        touch_email=touch_email)
         my_touch.save()
+        messages.success(request, f"Hi {touch_name}, we'll be in contact with you shortly!")
+        return redirect("home")
+    else:
+        messages.success(request, "Invalid Information Passed")
+        return redirect("home")
+    
+    return render(request, 'app/home.html')
