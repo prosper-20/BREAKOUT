@@ -49,3 +49,11 @@ class Comment(models.Model):
     #         'slug': self.slug
     #     })
 
+
+class Touch(models.Model):
+    touch_name = models.CharField(max_length=50)
+    touch_email = models.EmailField()
+
+    def __str__(self):
+        return self.touch_name
+
