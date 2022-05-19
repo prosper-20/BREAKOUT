@@ -1,3 +1,4 @@
+import email
 import imp
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
@@ -10,6 +11,8 @@ from django.core.mail import EmailMessage, send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage, send_mail
 from sendgrid.helpers.mail import SandBoxMode, MailSettings
+
+from blog.models import Touch
 
 # def register(request):
 #     if request.method == 'POST':
@@ -103,3 +106,15 @@ def register(request):
             return redirect("register")
     
     return render(request, "users/register_2.html")
+
+
+
+def touch(request):
+    if request.method == "POST":
+        touch_name = request.POST["touch_name"]
+        touch_email = request.POST["touch_email"]
+
+
+        my_touch = Touch.objects.create(touch_name=touch_name
+        touch_email=email)
+        my_touch.save()
