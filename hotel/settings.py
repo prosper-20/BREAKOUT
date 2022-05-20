@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'hotelapp.apps.HotelappConfig',
     'django_social_share'
+    'storages',
 ]
 
 MIDDLEWARE = [
