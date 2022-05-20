@@ -68,7 +68,7 @@ def HomeView(request):
         # FOR SENDING AUTO MAILS
         html_template = 'app/main_email.html'
         html_message = render_to_string(html_template, context=mydict)
-        subject = 'Appointment Reservation'
+        subject = 'Room Reservation'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -76,7 +76,7 @@ def HomeView(request):
         message.content_subtype = 'html'
         message.send()
         messages.success(request, "Reservation has been placed")
-        return redirect("contact")
+        return redirect("home")
     else:
         return render(request, template_name, context)
 
