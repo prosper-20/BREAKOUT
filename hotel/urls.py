@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import imp
+from re import template
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -38,7 +39,11 @@ urlpatterns = [
     path("room-list/", RoomListView, name='RoomListView'),
     path("booking-list/", BookingListView.as_view(), name="BookingListView"),
     path("room/<category>", RoomDetailView.as_view(), name='RoomDetailView'),
-    path('booking/cancel/<pk>/', CancelBookingView.as_view(), name="CancelBookingView")
+    path('booking/cancel/<pk>/', CancelBookingView.as_view(), name="CancelBookingView"),
+
+    # FOR PASSWORD RESET
+    path("password-reset/", auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name="password_reset"),
+    path("password-reset/confirm/", auth_views.PasswordResetConfirmView.as_view(template_name="users/password_reset_confirm.html"), name="password_reset_confirm"),
 ]
     
 
