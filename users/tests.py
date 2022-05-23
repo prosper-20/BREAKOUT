@@ -32,7 +32,7 @@ class CustomUserTests(TestCase):
         self.assertTrue(user.is_staff)
 
 
-class PageTests(SimpleTestCase):
+class PageTests(TestCase):
 
     def test_login_status_code(self):
         response = self.client.get("/login/")
@@ -51,11 +51,51 @@ class PageTests(SimpleTestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_profile_code(self):
+        self.user = User.objects.create_user('martins', 'lennon@thebeatles.com', 'testing321')
+        self.client.login(username='martins', password='testing321')
         response = self.client.get("/profile/")
         self.assertEqual(response.status_code, 200)
 
     def test_profile_urlname(self):
+        self.user = User.objects.create_user('martins', 'lennon@thebeatles.com', 'testing321')
+        self.client.login(username='martins', password='testing321')
         response = self.client.get(reverse('profile'))
+        self.assertEqual(response.status_code, 200)
+
+
+class PasswordPagesTests(SimpleTestCase):
+
+    def test_password_reset_status_code(self):
+        response = self.client.get("/password-reset/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_urlname(self):
+        response = self.client.get(reverse("password_reset"))
+        self.assertEqual(response.status_code, 200)
+
+    
+    def test_password_reset_complete_status_code(self):
+        response = self.client.get("/password-reset-complete/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_complete_url_name(self):
+        response = self.client.get(reverse("password_reset_complete"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_done_status_code(self):
+        response = self.client.get("/password-reset-done/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_url_name(self):
+        response = self.client.get(reverse("password_reset_done"))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_password_reset_confirm_status_code(self):
+        response = self.client.get("/password-reset-confirm/<uidb64>/<token>/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_confirmm_url_name(self):
+        response = self.client.get(reverse("password_reset_confirm"))
         self.assertEqual(response.status_code, 200)
 
 
