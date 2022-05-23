@@ -1,5 +1,6 @@
-from django.test import TestCase
+from django.test import TestCase, SimpleTestCase
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your tests here.
 
 
@@ -29,4 +30,60 @@ class CustomUserTests(TestCase):
         self.assertTrue(user.is_active)
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+
+class PageTests(SimpleTestCase):
+
+    def test_login_status_code(self):
+        response = self.client.get("/login/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_login_url_name(self):
+        response = self.client.get(reverse("login"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_logout_code(self):
+            response = self.client.get("/logout/")
+            self.assertEqual(response.status_code, 200)
+
+    def test_logout_urlname(self):
+        response = self.client.get(reverse("logout"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_profile_code(self):
+        response = self.client.get("/profile/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_profile_urlname(self):
+        response = self.client.get(reverse('profile'))
+        self.assertEqual(response.status_code, 200)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
