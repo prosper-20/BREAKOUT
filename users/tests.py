@@ -66,7 +66,7 @@ class PageTests(TestCase):
 
     def test_profile_template_used(self):
         response = self.client.get('/profile/', follow=True)
-        response.redirect_chain
+        self.assertRedirects(response, '/login/?next=/profile/')
         self.assertTemplateUsed(response, "users/login_2.html")
 
     def test_profile_urlname(self):
