@@ -64,6 +64,11 @@ class PageTests(TestCase):
         response = self.client.get("/profile/")
         self.assertEqual(response.status_code, 200)
 
+    def test_profile_template_used(self):
+        response = self.client.get('/profile/', follow=True)
+        response.redirect_chain
+        self.assertTemplateUsed(response, "users/login_2.html")
+
     def test_profile_urlname(self):
         self.user = User.objects.create_user('martins', 'lennon@thebeatles.com', 'testing321')
         self.client.login(username='martins', password='testing321')
