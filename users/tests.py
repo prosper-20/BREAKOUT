@@ -38,6 +38,14 @@ class PageTests(TestCase):
         response = self.client.get("/login/")
         self.assertEqual(response.status_code, 200)
 
+    def test_login_template_used(self):
+        response = self.client.get("/login/")
+        self.assertTemplateUsed(response, "users/login_2.html")
+
+    def test_login_template_contains(self):
+        response = self.client.get('/login/')
+        self.assertContains(response, "Sign In")
+
     def test_login_url_name(self):
         response = self.client.get(reverse("login"))
         self.assertEqual(response.status_code, 200)
