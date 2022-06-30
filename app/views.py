@@ -279,5 +279,5 @@ def homebooking(request):
 
 
 def personal(request):
-    return render(request, 'app/personal_info.html')
+    return render(request, 'app/personal_information.html')
 
