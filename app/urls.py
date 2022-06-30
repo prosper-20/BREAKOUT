@@ -17,7 +17,8 @@ urlpatterns = [
     path('rooms/', views.rooms, name="rooms"),
     path('tester/<category>', TestView.as_view(), name="test_booking"),
     path('contact-us/', contact_us, name='contact_us'),
-    path("homebooking/", views.homebooking, name="home_booking")
+    path("homebooking/", views.homebooking, name="home_booking"),
+    path("personal-information/", views.personal, name="personal")
 
 ]
  

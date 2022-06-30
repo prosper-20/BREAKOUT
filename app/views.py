@@ -276,3 +276,8 @@ def homebooking(request):
         form = HotelBookingForm()
     return render(request, "app/home_booking.html", {'form': form})
 
+
+
+def personal(request):
+    return render(request, 'app/personal_info.html')
+
