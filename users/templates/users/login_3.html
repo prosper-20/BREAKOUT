@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 10</title>
+  	<title>P's Suites | Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,12 +25,13 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="#" class="signin-form">
+		      	<form action="" class="signin-form" method="post">
+                    {% csrf_token %}
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Username" required>
+		      			<input type="text" name="username" class="form-control" placeholder="Username" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+	              <input id="password-field" name="password" type="password" class="form-control" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
@@ -44,7 +45,7 @@
 									</label>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
+									<a href="{% url 'password_reset' %}" style="color: #fff">Forgot Password</a>
 								</div>
 	            </div>
 	          </form>
@@ -60,9 +61,9 @@
 	</section>
 
 	<script src="{% static 'users/js1/jquery.min.js' %}"></script>
-  <script src="{% static 'usersjs1/popper.js' %}"></script>
-  <script src="{% static 'usersjs1/bootstrap.min.js' %}"></script>
-  <script src="{% static 'usersjs1/main.js' %}"></script>
+  <script src="{% static 'users/js1/popper.js' %}"></script>
+  <script src="{% static 'users/js1/bootstrap.min.js' %}"></script>
+  <script src="{% static 'users/js1/main.js' %}"></script>
 
 	</body>
 </html>
