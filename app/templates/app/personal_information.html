@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Chondo Hotel | Booking Done</title>
+    <title>P's Suites | Booking Done</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,17 +63,17 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div class="logo mt-15">
-                                        <a href="index.html"><img src="images/logo/logo.png" alt=""></a>
+                                        <a href="index.html"><img src="{% static 'app/images/logo/new_logo.png' %}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-sm-10 hidden-xs">
                                     <div class="header-top ptb-10">
                                         <div class="adresses">
                                             <div class="phone">
-                                                <p>call <span>+012 345 678 102 </span></p>
+                                                <p>call <span>+234 9036 356792 </span></p>
                                             </div>
                                             <div class="email">
-                                                <p>Email: <span>info@example.com</span></p>
+                                                <p>Email: P's.suite@gmail.com</p>
                                             </div>
                                         </div>
                                         <div class="social-links">
@@ -99,13 +99,13 @@
 															<li><a href="payment-information.html">Parment Information</a></li>
 															<li><a href="booking-done.html">Booking Done</a></li>
 															<li><a href="room-booking.html">Room booking</a></li>
-															<li><a href="news.html">News</a></li>
-															<li><a href="gallery.html">Gallery</a></li>
-															 <li><a href="staff.html">Staff</a></li>
-															<li><a href="our-room.html">Room</a></li>
+															<li><a href="{% url 'news' %}">News</a></li>
+															<li><a href="{% url 'gallery' %}">Gallery</a></li>
+															<li><a href="{% url 'staff' %}">Staff</a></li>
+															<li><a href="{% url 'rooms' %}">Room</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="contact-us.html">Contact</a></li>
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -124,9 +124,9 @@
                         <div class="col-md-12">
                             <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="{% url 'home' %}">home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                 <li><a href="#">pages</a>
                                     <ul>
                                         <li><a href="404.html">404</a></li>
@@ -135,13 +135,13 @@
                                         <li><a href="payment-information.html">Parment Information</a></li>
                                         <li><a href="booking-done.html">Booking Done</a></li>
                                         <li><a href="room-booking.html">Room booking</a></li>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="staff.html">Staff</a></li>
-                                        <li><a href="our-room.html">Room</a></li>
+                                        <li><a href="{% url 'news' %}">News</a></li>
+                                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                        <li><a href="{% url 'staff' %}">Staff</a></li>
+                                        <li><a href="{% url 'rooms' %}">Room</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html">contact</a></li>
+                                <li><a href="{% url 'contact' %}">contact</a></li>
                             </ul>
                         </nav>
                         </div>
