@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,15 +10,15 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{% static 'users/css1/style.css' %}">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<body class="img js-fullheight" style="background-image: url(https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #10</h2>
+				<div class="col-md-6 text-center mb-3">
+					<h2 class="heading-section">P's Suites</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -58,10 +59,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="{% static 'users/js1/jquery.min.js' %}"></script>
+  <script src="{% static 'usersjs1/popper.js' %}"></script>
+  <script src="{% static 'usersjs1/bootstrap.min.js' %}"></script>
+  <script src="{% static 'usersjs1/main.js' %}"></script>
 
 	</body>
 </html>

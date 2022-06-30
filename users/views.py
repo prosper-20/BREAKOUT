@@ -67,8 +67,8 @@ def login(request):
         else:
             messages.error(request, "Credentials not valid")
             return redirect("login")
-    #You changed from login.htnl to form-login
-    return render(request, 'users/login_2.html')
+    #You changed from login.htnl to form-login to login_@ to login_3
+    return render(request, 'users/login_3.html')
 
 
 def register(request):
