@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'hotelapp.apps.HotelappConfig',
     'django_social_share',
     'storages',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'hotel.urls'
